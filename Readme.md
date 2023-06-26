@@ -23,20 +23,20 @@ Currently, the /reservation supports Get and Post.
 Get a request with send back a list of non-booked reservations in the database, with a
 default page size of 5. This page size can be modified up to 15. Individual reservations
 can be retrieved by supplying the id.
-##/reservation
+## /reservation
 - GET: returns a list of unbooked reservations, the default page size of 5, max of 15, and default page offset of 1.
 - POST: upload a new reservation, must have a valid JWT token in auth Bearer Header
 
-##/reservation/:id  
+## /reservation/:id  
 - GET: returns a reservation if one exists matching the ID
 ```
 GET
-/reservation/id                              //retrieves reservation with id of 10 if present
+/reservation/10                              //retrieves reservation with id of 10 if present
 /reservation?page_size=10                   //returns 10 reservations in database
 /reservation?page_size=5&page_id=2          //returns 5 reservations with a page offset of 1 
 ```
 
-##/book
+## /book
 - POST: used to book a reservation, reservation must start after the current time, be unbooked, and have table size larger than party size.
 Our extremely optimized backend system will automatically find a reservation at the same time with a smaller table size that matches your desired size if it exists, so the reservation you return might be different from what you request.
 ```
