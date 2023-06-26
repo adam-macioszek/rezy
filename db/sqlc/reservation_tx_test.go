@@ -26,7 +26,7 @@ func TestSimpleReservation(t *testing.T) {
 
 func TestBookedReservation(t *testing.T) {
 
-	reservation := createCustomReservation(t, 5, time.Now(), time.Now(), true, 30)
+	reservation := createCustomReservation(t, 5, time.Now(), true, 30)
 	arg := MakeReservationParams{
 		ReservationID: reservation.ID,
 		TableSize:     reservation.TableSize,
